@@ -1,7 +1,12 @@
-const Auth = () => {
-  return (
-    <div>Auth</div>
-  )
-}
+import { AuthComponent } from '../../components/auth/AuthComponent';
+import cl from './Auth.module.scss';
 
-export default Auth
+const Auth = () => {
+    return (
+        <div className={cl.auth}>
+            <AuthComponent />
+        </div>
+    );
+};
+
+export default Auth;

@@ -1,0 +1,37 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 100%;
+    position: relative;
+}
+
+.input {
+    border: none;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    border-bottom: 0.1rem solid #bdbdbd;
+    outline: none;
+}
+
+.label {
+    padding-left: 1rem;
+    color: #bdbdbd;
+    position: absolute;
+    transform: translateY(-0.3rem);
+    transform-origin: left top;
+    cursor: text;
+    transition: all 0.3s;
+}
+
+.input:focus,
+.input:not(:placeholder-shown) {
+    border-bottom: 0.1rem solid #212121;
+}
+
+.input:focus ~ label,
+.input:not(:placeholder-shown) ~ label {
+    padding: 0;
+    color: #212121;
+    transform: translateY(-2rem) scale(0.8);
+}
