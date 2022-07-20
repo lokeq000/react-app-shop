@@ -2,10 +2,17 @@ import { CustomInput } from '../../UI/customInput/CustomInput';
 import cl from './AuthComponent.module.scss';
 import { useState } from 'react';
 import { CustomBtn } from '../../UI/customBtn/CustomBtn';
+import userApi from '../../http/userApi';
 
 export const AuthComponent = () => {
-    const [test, setTest] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
+    const sendAuth = () => {
+        userApi.registration({
+            email, password
+        })
+    }
     return (
         <div className={cl.auth}>
             {/* @ts-ignore */}
@@ -13,23 +20,28 @@ export const AuthComponent = () => {
                 <CustomInput
                     label="Email"
                     onChange={(e: { target: HTMLInputElement }) =>
-                        setTest(e.target.value)
+                    setEmail(e.target.value)
                     }
-                    value={test}
+                    value={email}
                 />
             </div>
             <div className={cl['auth__input']}>
                 <CustomInput
                     label="Password"
                     onChange={(e: { target: HTMLInputElement }) =>
-                        setTest(e.target.value)
+                    setPassword(e.target.value)
                     }
-                    value={test}
+                    value={password}
                 />
             </div>
-            <div className={cl['auth__btn-wrapper']}>
+            <div 
+                onClick={() => sendAuth()}
+                className={cl['auth__btn-wrapper']}
+            >
                 <div className={cl['auth__btn']}>
-                    <CustomBtn>Registration</CustomBtn>
+                    <CustomBtn>
+                        Registration
+                    </CustomBtn>
                 </div>
             </div>
         </div>

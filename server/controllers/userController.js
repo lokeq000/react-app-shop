@@ -44,7 +44,11 @@ class UserController {
         }
 
         const jwtToken = generateJwt(user.id, user.email, user.role);
-        return res.json({ jwtToken });
+
+        return res.json({
+            email: user.email,
+            role: user.role,
+        });
     }
 
     async checkAuth(req, res) {

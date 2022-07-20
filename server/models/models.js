@@ -8,6 +8,15 @@ const User = sequelize.define('user', {
     role: { type: DataTypes.STRING },   
 });
 
+const Device = sequelize.define('device', {
+    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name: { type: DataTypes.STRING, unique: true },
+    price: { type: DataTypes.INTEGER, allowNull: false },
+    img: { type: DataTypes.STRING, allowNull: false },
+});
+
+
 module.exports = {
     User,
+    Device
 };
