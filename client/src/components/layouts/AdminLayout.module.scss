@@ -1,0 +1,15 @@
+.admin {
+    display: flex;
+    background: #F7F8FC;
+
+    &__nav-bar {
+        padding: 20px 0px;
+        width: 200px;
+        background-color: #363740;
+        height: 100vh;
+    }
+
+    &__content {
+        padding: 20px;
+    }
+}

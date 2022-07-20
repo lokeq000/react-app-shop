@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useTypeSelector } from '../../hooks/redux';
-import { authRoutes, publicRoutes, adminRoutes } from '../../routes';
+import { authRoutes, publicRoutes, adminRoutes } from '../../router/routes';
+import AdminLayout from '../layouts/AdminLayout';
 
 const AppRouter = () => {
     const isAuth = useTypeSelector((state) => state.user.user.isAuth);
@@ -13,11 +14,11 @@ const AppRouter = () => {
                     <Route key={path} path={path} element={<Component />} />
                 ))
             }
-            {isAdmin &&
-                adminRoutes.map(({ path, Component }) => (
-                    <Route key={path} path={path} element={<Component />} />
-                ))
-            }
+                <Route path='admin' element={<AdminLayout />}>
+                    {adminRoutes.map(({ path, Component }) => (
+                        <Route key={path} path={path} element={<Component />} />
+                    ))}
+                </Route>
             {publicRoutes.map(({ path, Component }) => (
                 <Route key={path} path={path} element={<Component />} />
                 ))

@@ -1,10 +1,10 @@
 import { CustomInput } from '../../UI/customInput/CustomInput';
 import cl from './AuthComponent.module.scss';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { CustomBtn } from '../../UI/customBtn/CustomBtn';
 import userApi from '../../http/userApi';
 
-export const AuthComponent = () => {
+export const AuthComponent: FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -15,7 +15,6 @@ export const AuthComponent = () => {
     }
     return (
         <div className={cl.auth}>
-            {/* @ts-ignore */}
             <div className={cl['auth__input']}>
                 <CustomInput
                     label="Email"

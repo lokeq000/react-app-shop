@@ -1,9 +1,10 @@
-import AdminPage from './pages/admin/AdminPage';
-import Auth from './pages/auth/Auth';
-import Basket from './pages/basket/Basket';
-import DevicePage from './pages/devicePage/DevicePage';
-import Shop from './pages/shop/Shop';
-import { Routes } from './utils/consts';
+import CreateDevice from '../components/adminComponents/createDevice/CreateDevice';
+import DashboardAdmin from '../components/adminComponents/dashboard/DashboardAdmin';
+import Auth from '../pages/auth/Auth';
+import Basket from '../pages/basket/Basket';
+import DevicePage from '../pages/devicePage/DevicePage';
+import Shop from '../pages/shop/Shop';
+import { AdminRoutes, Routes} from  './consts';
 
 export const authRoutes: RoutesItem[] = [
     {
@@ -33,8 +34,12 @@ export const publicRoutes: RoutesItem[] = [
 
 export const adminRoutes: RoutesItem[] = [
     {
-        path: Routes.ADMIN_ROUTE,
-        Component: AdminPage,
+        path: AdminRoutes.DASHBOARD,
+        Component: DashboardAdmin,
+    },
+    {
+        path: AdminRoutes.CREATE_DEVICE,
+        Component: CreateDevice,
     },
 ]
 
