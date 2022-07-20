@@ -11,6 +11,7 @@ const User = sequelize.define('user', {
 const Device = sequelize.define('device', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: { type: DataTypes.STRING, unique: true },
+    desc: { type: DataTypes.STRING, allowNull: false },
     price: { type: DataTypes.INTEGER, allowNull: false },
     img: { type: DataTypes.STRING, allowNull: false },
 });
