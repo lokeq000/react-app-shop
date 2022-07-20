@@ -7,10 +7,6 @@ import { Routes } from './utils/consts';
 
 export const authRoutes: RoutesItem[] = [
     {
-        path: Routes.ADMIN_ROUTE,
-        Component: AdminPage,
-    },
-    {
         path: Routes.BASKET_ROUTE,
         Component: Basket,
     },
@@ -34,6 +30,13 @@ export const publicRoutes: RoutesItem[] = [
         Component: DevicePage,        
     },
 ];
+
+export const adminRoutes: RoutesItem[] = [
+    {
+        path: Routes.ADMIN_ROUTE,
+        Component: AdminPage,
+    },
+]
 
 interface RoutesItem {
     path: string;
