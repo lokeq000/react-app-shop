@@ -1,9 +1,8 @@
-import { FC } from 'react';
+import { FC, memo} from 'react';
 import cl from './CustomInput.module.scss';
 
-export const CustomInput: FC<Props> = ({ label, type, value, onChange }) => {
+const CustomInput: FC<Props> = ({ label, type, value, onChange }) => {
     if (!type) type = 'text'
-
     return (
         <div className={cl['input-wrapper']}>
             <input
@@ -11,8 +10,8 @@ export const CustomInput: FC<Props> = ({ label, type, value, onChange }) => {
                 id={label}
                 type={type}
                 value={value}
-                onChange={(e) => onChange(e)}
-                placeholder=" "
+                onChange={(e) => onChange(e.target.value)}
+                placeholder=""
             />
             <label className={cl.label} htmlFor={label}>
                 {label}
@@ -21,9 +20,10 @@ export const CustomInput: FC<Props> = ({ label, type, value, onChange }) => {
     );
 };
 
+export default memo(CustomInput)
 interface Props {
     type?: string;
-    label: string;
-    value: string | number;
+    label?: string;
+    value: any;
     onChange: CallableFunction;
 }

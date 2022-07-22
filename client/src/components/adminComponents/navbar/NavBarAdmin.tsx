@@ -15,14 +15,15 @@ const NavBarAdmin: FC = () => {
     <ul className={cl['nav-list']}>
         {
             navBarList.map(({ name, link }) => (
-                <li>
+                <li
+                    key={link}
+                >
                     <NavLink
                         className={({ isActive }) => isActive 
                             ? `${cl['link--active']} ${cl['link']}` 
                             : cl['link']
                         }
                         to={link}
-                        key={link}
                     >
                         {name}
                     </NavLink>

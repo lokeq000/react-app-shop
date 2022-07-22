@@ -3,6 +3,7 @@
     background: #F7F8FC;
 
     &__nav-bar {
+        flex-shrink: 0;
         padding: 20px 0px;
         width: 200px;
         background-color: #363740;

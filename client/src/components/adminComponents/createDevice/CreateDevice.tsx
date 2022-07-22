@@ -1,9 +1,12 @@
 import { FC } from 'react';
+import DeviceForm from '../DeviceForm/DeviceForm';
 import cl from './CreateDevice.module.scss'
 
 const CreateDevice: FC = () => {
   return (
-    <div>CreateDevice</div>
+    <div>
+      <DeviceForm />
+    </div>
   )
 }
 

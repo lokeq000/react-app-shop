@@ -1,4 +1,4 @@
-import { CustomInput } from '../../UI/customInput/CustomInput';
+import CustomInput  from '../../UI/customInput/CustomInput';
 import cl from './AuthComponent.module.scss';
 import { FC, useState } from 'react';
 import { CustomBtn } from '../../UI/customBtn/CustomBtn';
@@ -18,8 +18,8 @@ export const AuthComponent: FC = () => {
             <div className={cl['auth__input']}>
                 <CustomInput
                     label="Email"
-                    onChange={(e: { target: HTMLInputElement }) =>
-                    setEmail(e.target.value)
+                    onChange={(e: string) =>
+                    setEmail(e)
                     }
                     value={email}
                 />
@@ -27,8 +27,8 @@ export const AuthComponent: FC = () => {
             <div className={cl['auth__input']}>
                 <CustomInput
                     label="Password"
-                    onChange={(e: { target: HTMLInputElement }) =>
-                    setPassword(e.target.value)
+                    onChange={(e: string) =>
+                    setPassword(e)
                     }
                     value={password}
                 />
